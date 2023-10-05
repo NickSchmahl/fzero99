@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit new times</title>
+    <link href="webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+    <h1>Submit your times here</h1>
+    <form th:action="@{'submission/new'}" th:object="${submissionDto}" method="POST">
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="map">Map: </label>
+                <input id="map" class="form-control" th:field="*{map}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="total-time">Total time:</label>
+                <input id="total-time" class="form-control" th:field="*{totalTime}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="round-1">Round 1:</label>
+                <input id="round-1" class="form-control" th:field="*{round1}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="round-2">Round 2:</label>
+                <input id="round-2" class="form-control" th:field="*{round2}">
+            </div>
+            <!-- For good looking purposes -->
+            <div class="col-md-6"></div>
+            <div class="form-group col-md-3">
+                <label for="round-3">Round 3:</label>
+                <input id="round-3" class="form-control" th:field="*{round3}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="round-4">Round 4:</label>
+                <input id="round-4" class="form-control" th:field="*{round4}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</body>
+</html>
