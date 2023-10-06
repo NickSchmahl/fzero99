@@ -10,31 +10,36 @@
     <h1>Submit your times here</h1>
     <form th:action="@{'submission/new'}" th:object="${submissionDto}" method="POST">
         <div class="row">
-            <div class="form-group col-md-3">
-                <label for="track">Map: </label>
-                <input id="track" class="form-control" th:field="*{track}">
+            <div class="col-md-3">
+                <label for="track" class="form-label">Map: </label>
+                <select id="track" class="form-select" th:field="*{track}">
+                    <option th:each="track: ${trackChoices}"
+                            th:text="${track.realName}"
+                            th:value="${track}">
+                    </option>
+                </select>
             </div>
-            <div class="form-group col-md-3">
-                <label for="total-time">Total time:</label>
-                <input id="total-time" class="form-control" th:field="*{totalTime}">
+            <div class="col-md-3">
+                <label for="total-time" class="form-label">Total time:</label>
+                <input id="total-time" class="form-control" th:field="*{totalTime}" type="number" step="0.01">
             </div>
-            <div class="form-group col-md-3">
-                <label for="round-1">Round 1:</label>
-                <input id="round-1" class="form-control" th:field="*{round1}">
+            <div class="col-md-3">
+                <label for="round-1" class="form-label">Round 1:</label>
+                <input id="round-1" class="form-control" th:field="*{round1}" type="number" step="0.01">
             </div>
-            <div class="form-group col-md-3">
-                <label for="round-2">Round 2:</label>
-                <input id="round-2" class="form-control" th:field="*{round2}">
+            <div class="col-md-3">
+                <label for="round-2" class="form-label">Round 2:</label>
+                <input id="round-2" class="form-control" th:field="*{round2}" type="number" step="0.01">
             </div>
             <!-- For good looking purposes -->
             <div class="col-md-6"></div>
-            <div class="form-group col-md-3">
-                <label for="round-3">Round 3:</label>
-                <input id="round-3" class="form-control" th:field="*{round3}">
+            <div class="col-md-3">
+                <label for="round-3" class="form-label">Round 3:</label>
+                <input id="round-3" class="form-control" th:field="*{round3}" type="number" step="0.01">
             </div>
-            <div class="form-group col-md-3">
-                <label for="round-4">Round 4:</label>
-                <input id="round-4" class="form-control" th:field="*{round4}">
+            <div class="col-md-3">
+                <label for="round-4" class="form-label">Round 4:</label>
+                <input id="round-4" class="form-control" th:field="*{round4}" type="number" step="0.01">
             </div>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>

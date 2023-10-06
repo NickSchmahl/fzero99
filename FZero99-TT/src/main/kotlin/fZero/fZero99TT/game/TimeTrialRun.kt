@@ -6,7 +6,8 @@ import jakarta.persistence.*
 @Table(name = "times")
 class TimeTrialRun (
     @Column(nullable = false)
-    val track: String,
+    @Enumerated(EnumType.STRING)
+    val track: FZeroTrack,
     @Column(nullable = false)
     val totalTime: Double,
     @Column
