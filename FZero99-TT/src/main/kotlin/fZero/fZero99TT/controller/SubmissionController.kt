@@ -2,6 +2,7 @@ package fZero.fZero99TT.controller
 
 import fZero.fZero99TT.applicationService.SubmissionApplicationService
 import fZero.fZero99TT.dto.SubmissionDto
+import fZero.fZero99TT.game.FZeroTrack
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,6 +18,7 @@ class SubmissionController(
     @GetMapping("")
     fun getSubmitPage(model: Model): String {
         model.addAttribute("submissionDto", SubmissionDto())
+        model.addAttribute("trackChoices", FZeroTrack.values())
         return "submission"
     }
 

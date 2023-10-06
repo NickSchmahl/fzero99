@@ -12,7 +12,7 @@ class SubmissionApplicationService(
     fun saveRun(submissionDto: SubmissionDto) {
         timetrialRepository.save(
             TimeTrialRun(
-                map = submissionDto.map,
+                track = submissionDto.track,
                 totalTime = submissionDto.totalTime,
                 round1 = submissionDto.round1,
                 round2 = submissionDto.round2,

@@ -1,7 +1,7 @@
 package fZero.fZero99TT.dto
 
 data class SubmissionDto(
-        val map: String = "",
+        val track: String = "",
         val totalTime: Double = 0.0,
         val round1: Double = 0.0,
         val round2: Double = 0.0,

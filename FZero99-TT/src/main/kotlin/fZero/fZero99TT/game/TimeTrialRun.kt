@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Table(name = "times")
 class TimeTrialRun (
     @Column(nullable = false)
-    val map: String,
+    val track: String,
     @Column(nullable = false)
     val totalTime: Double,
     @Column
