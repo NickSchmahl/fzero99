@@ -8,6 +8,19 @@
 </head>
 <body class="container">
     <h1 class="text-primary">FZero-99 Training Times Rankings</h1>
+    <form th:action="@{'rankings'}" th:object="${chooseRankingDto}" method="get">
+        <div class="form-row">
+            <div class="form-group col-4">
+                <label for="select_track" class="form-label">Select track:</label>
+                <select class="form-select" id="select_track" th:field="*{track}">
+                    <option th:each="track: ${trackChoices}"
+                            th:text="${track.realName}"
+                            th:value="${track}">
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
     <div th:each="run, itemstat: ${runsForRanking}" class="row border">
         <div class="col" th:text="${itemstat.count}"></div>
         <div class="col" th:text="${run.track.realName}"></div>
