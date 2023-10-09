@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Rankings F-ZERO 99</title>
     <link href="webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
 </head>
-<body>
-  <h1 class="container text-primary">Welcome to FZero 99</h1>
+<body class="container">
+    <h1 class="text-primary">FZero-99 Training Times Rankings</h1>
+    <div th:each="run, itemstat: ${runsForRanking}" class="row border">
+        <div class="col" th:text="${itemstat.count}"></div>
+        <div class="col" th:text="${run.track.realName}"></div>
+        <div class="col" th:text="${run.totalTime}"></div>
+        <div class="col" th:text="${run.round1}"></div>
+        <div class="col" th:text="${run.round2}"></div>
+        <div class="col" th:text="${run.round3}"></div>
+        <div class="col" th:text="${run.round4}"></div>
+    </div>
 </body>
 </html>
