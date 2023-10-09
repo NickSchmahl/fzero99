@@ -4,6 +4,7 @@ import fZero.fZero99TT.dto.RankingRunDto
 import fZero.fZero99TT.game.FZeroTrack
 import fZero.fZero99TT.game.TimeTrialRun
 import fZero.fZero99TT.repository.TimetrialRepository
+import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 
 @Service
@@ -11,7 +12,7 @@ class RankingApplicationService(
     private val timetrialRepository: TimetrialRepository
 ) {
     fun getAllTimes(): List<RankingRunDto> {
-        val runs: List<TimeTrialRun> = timetrialRepository.findAll()
+        val runs: List<TimeTrialRun> = timetrialRepository.findAll(Sort.by(Sort.Direction.ASC, "totalTime"))
         return dbRunsToDtoRuns(runs)
     }
 
@@ -19,7 +20,7 @@ class RankingApplicationService(
         if (track == null) {
             return getAllTimes()
         }
-        val runs: List<TimeTrialRun> = timetrialRepository.findByTrack(track)
+        val runs: List<TimeTrialRun> = timetrialRepository.findByTrackOrderByTotalTimeAsc(track)
         return dbRunsToDtoRuns(runs)
     }
 

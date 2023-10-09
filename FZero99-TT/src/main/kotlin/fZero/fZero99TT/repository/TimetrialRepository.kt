@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface TimetrialRepository : JpaRepository<TimeTrialRun, Long> {
-    fun findByTrack(track: FZeroTrack): List<TimeTrialRun>
+    fun findByTrackOrderByTotalTimeAsc(track: FZeroTrack): List<TimeTrialRun>
 }
