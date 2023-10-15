@@ -35,6 +35,7 @@ class RankingApplicationService(
                     round2 = run.round2,
                     round3 = run.round3,
                     round4 = run.round4,
+                    glider = run.glider,
                 )
             )
         }

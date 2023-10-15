@@ -18,6 +18,7 @@ class SubmissionApplicationService(
                 round2 = submissionDto.round2,
                 round3 = submissionDto.round3,
                 round4 = submissionDto.round4,
+                glider = submissionDto.glider,
         ))
     }
 }

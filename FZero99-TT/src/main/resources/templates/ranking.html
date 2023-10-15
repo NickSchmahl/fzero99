@@ -26,6 +26,7 @@
             <tr style="font-weight: bold">
                 <td>Place</td>
                 <td>Track</td>
+                <td>Glider</td>
                 <td>Total time</td>
                 <td>Round 1</td>
                 <td>Round 2</td>
@@ -37,6 +38,7 @@
             <tr th:each="run, itemstat: ${runsForRanking}">
                 <td th:text="${itemstat.count}"></td>
                 <td th:text="${run.track.realName}"></td>
+                <td th:text="${run.glider.realName}"></td>
                 <td th:text="${run.totalTime}"></td>
                 <td th:text="${run.round1}"></td>
                 <td th:text="${run.round2}"></td>

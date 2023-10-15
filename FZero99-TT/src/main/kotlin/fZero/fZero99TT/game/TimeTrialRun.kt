@@ -11,6 +11,9 @@ class TimeTrialRun (
     val track: FZeroTrack,
     @Column(nullable = false)
     val totalTime: Double,
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    val glider: FZeroGlider,
     @Column
     val round1: Double,
     @Column
